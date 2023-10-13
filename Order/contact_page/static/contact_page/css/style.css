@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    width: 100%;
+    margin-left: 20%;
+    height: 600px;
+    gap: 5px;
+    padding-top: 4%;
+    padding-left: 50px;
+}
+.column1{
+    overflow: hidden;
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.column1 .image{
+    height: 600px;
+    width: auto;
+    transition: transform 0.8s;
+}
+
+.column2 .image{
+    height: 200px;
+    width: 300px;
+    max-width: 300px;
+    max-height: 200px;
+    transition: transform 0.8s;
+}
+
+.image:hover{
+    transform: scale(1.2);
+}
+
+.column3{
+    display: flex;
+    width: 25%;
+    margin-left: 3%;
+    color: aliceblue;
+    gap: 20px;
+    flex-direction: column;
+    line-height: 30px;
+    letter-spacing: 2px;
+}

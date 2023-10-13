@@ -1,0 +1,25 @@
+{% extends 'APP_Settings/base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'contact_page/css/style.css' %}">
+{% endblock %}
+{% block content %}
+    <div class = "container">
+        <div class="column1">
+            <a href="https://t.me/MaxSlipchuk"><img class="image" src="{% static 'contact_page/img/img_maxs.jpg' %}" alt=""></a>
+        </div>
+        <div class="column2">
+            <a href="https://t.me/MariaDragneva"><img class="image" src="{% static 'contact_page/img/img_masha.jpg' %}" alt=""></a>
+            <a href="https://t.me/heatzyo"><img class="image" src="{% static 'contact_page/img/img_maxg.jpg' %}" alt=""></a>
+            <a href="https://t.me/Rodion_Timchenko"><img class="image" src="{% static 'contact_page/img/img_rad.jpg' %}" alt=""></a>
+        </div>
+        <div class="column3">
+            <h2>Ми раді допомогти</h2>
+            <p>Ви завжди можете розраховувати на наших менеджерів при винекненні різних питань.
+              Якщо у Вас виникли проблеми з вибором продукції, доставкою або способом оплати - напишіть нам у Telegram.
+              І ми з радістю Вам допоможемо!
+            </p>
+        </div>
+    </div>
+    
+{% endblock %}

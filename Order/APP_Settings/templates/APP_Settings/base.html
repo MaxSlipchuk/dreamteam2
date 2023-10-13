@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="{% static 'APP_Settings/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    {% block links %}
+    {% endblock %}
+    {% block script %}
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <div id ='header'>
+            <a class="a" href="{% url 'main_page' %}">ГОЛОВНА СТОРІНКА</a>
+            <a class="a" href="{% url 'product_page' %}">ПАРФУМИ</a>
+            <a class="a" href="{% url 'contact_page' %}">КОНТАКТНА ІНФОРМАЦІЯ</a>
+            <!-- <a href="{% url 'Authorization_Registration' %}">РЕЄСТРАЦІЯ</a> -->
+            <a class="a" href="{% url 'shopping_cart_page' %}">ОБРАНІ ТОВАРИ</a>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+</body>
+</html>

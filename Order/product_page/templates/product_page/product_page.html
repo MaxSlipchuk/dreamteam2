@@ -1,0 +1,22 @@
+{% extends 'APP_Settings/base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'product_page/css/style.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div>
+            <img src="{% static 'product_page/img/dune.jpg' %}" alt="">
+            <img src="{% static 'product_page/img/eau.jpg' %}" alt="">
+            <img src="{% static 'product_page/img/fahrenheit.jpg' %}" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <img src="{% static 'product_page/img/higher.jpg' %}" alt="">
+            <img src="{% static 'product_page/img/home.jpg' %}" alt="">
+            <img src="{% static 'product_page/img/jules.jpg' %}" alt="">
+        </div>
+    </div>
+
+{% endblock %}
