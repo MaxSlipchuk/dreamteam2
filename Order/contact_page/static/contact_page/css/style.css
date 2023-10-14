@@ -16,12 +16,14 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+    /* не дає елементам виходити за межі колонки */
+    overflow: hidden; 
 }
 
 .column1 .image{
     height: 600px;
     width: auto;
+    /* час трансформації обєкта. відповідає за плавність */
     transition: transform 0.8s;
 }
 
@@ -30,10 +32,13 @@
     width: 300px;
     max-width: 300px;
     max-height: 200px;
+    /* час трансформації обєкта. відповідає за плавність */
     transition: transform 0.8s;
 }
 
 .image:hover{
+    /* збільшення картинки при наведенні.
+    в дужках - у скільки разів */
     transform: scale(1.2);
 }
 

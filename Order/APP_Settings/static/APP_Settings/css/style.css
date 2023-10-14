@@ -4,8 +4,6 @@
     font-family: 'Lora', serif;
 }
 
-
-
 #header {
     display: flex;
     flex-direction: column;
@@ -24,6 +22,15 @@
     padding-top: 6%;
     padding-left: 4%;
     color:aliceblue;
+}
+
+#reg{
+    display: flex;
+    align-items: flex-end;
+    /* position: relative;
+    top: end;
+ */
+
 }
 
 #header .a::before {
