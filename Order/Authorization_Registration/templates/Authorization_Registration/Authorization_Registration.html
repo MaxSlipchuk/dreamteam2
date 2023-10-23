@@ -1,8 +1,58 @@
 {% extends 'APP_Settings/base.html' %}
 {% load static %}
 {% block links %}
-    <link rel="stylesheet" href="{% static 'contact_page/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Authorization_Registration/css/style.css' %}">
 {% endblock %}
 {% block content %}
-    <h1>РЕЄСТРАЦІЯ</h1>
+    <div class="main-container">
+        <a id="registr" href="{% url 'Authorization_Registration' %}">РЕЄСТРАЦІЯ</a>
+        <a id="login" href="{% url 'login_page' %}">ВХІД</a>
+    </div>
+<div class="container">
+    <div class = 'input'>
+        <form action="#">
+            <div class="block-name">
+                <span><img src="{% static 'Authorization_Registration/img/name-white.png' %}" alt=""></span>
+                <input id="name"type="text" placeholder="Ваше ім'я">
+            </div>
+            <div class="block-surname">
+                <span><img src="{% static 'Authorization_Registration/img/surname-white.png' %}" alt=""></span>
+                <input id="surname"type="text" placeholder="Ваша фамілія">
+            </div>
+            <div class="block-numb">
+                <span><img src="{% static 'Authorization_Registration/img/tel-white.png' %}" alt=""></span>
+                <input id="telephone" type="tel" name="tel" pattern="\+38[0-9]{10}" placeholder="+38(___)___-__-__" maxlength="10">
+            </div>
+            <div class="block-login">
+                <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
+                <input id="login"type="email" placeholder="Ваш логін" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+            </div>
+            <div class="block-pass">
+                <span><img src="{% static 'Authorization_Registration/img/password-white.png' %}" alt=""></span>
+                <input id="password"type="password" placeholder="Ваш пароль">
+                <div id="div-pass"><input type="checkbox" id="checkbox"></div>
+            </div>
+            <input type="submit" value="Готово">
+
+        </form>
+    </div>
+    <div class = 'text'>
+        <h1>Стань частиною <span>історії</span></h1>
+        <p>Ми пропонуємо Вам стати частинкою ідеалогії DreamTeam!
+            Зареєстровані користувачі перші отримають інормацію стосовно нашої продукції.
+            Можливісь робити предзамовлення, отримувати персональні знижки та бути в курсі усіх новин компанії - 
+            усе це, та ще багато іншого ми пропонуємо нашим постійним користувачам!
+        </p>
+
+    </div>
+</div>
+<script>
+    const password = document.getElementById("password");
+    const checkbox = document.getElementById("checkbox");
+
+    checkbox.onchange = function(e) {
+        password.type = checkbox.checked ? "text" : "password"
+    };
+</script>
+    
 {% endblock %}

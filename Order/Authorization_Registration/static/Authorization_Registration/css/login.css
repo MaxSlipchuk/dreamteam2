@@ -13,6 +13,10 @@
     letter-spacing: 5px;
 }
 
+#login{
+    color: rgb(255, 255, 255)
+}
+
 .container{
     display: flex;
     width: 80%;
@@ -33,8 +37,8 @@ form{
     flex-direction: column;
     align-items: center;
     height: 500px;
-    gap: 10px;
     caret-color: #1398F8;
+    gap: 10px;
 }
 
 form input{
@@ -59,6 +63,10 @@ form input::placeholder{
     font-size: 18px;
 }
 
+img{
+    width: 55px;
+}
+
 form div{
     display: flex;
     width: 450px;
@@ -66,15 +74,10 @@ form div{
     /* gap: 5px; */
 }
 
+
 form div input{
     width: 100%;
     height: 100%;
-}
-
-#checkbox{
-    height: 40%;
-    background-color: black;
-    accent-color: black;
 }
 
 input[type = submit]{
@@ -86,43 +89,44 @@ input[type = submit]{
     border: #1398F8 solid 1px;
 }
 
-img{
-    width: 55px;
-}
 
+#checkbox{
+    height: 40%;
+    background-color: black;
+    accent-color: black;
+    
+}
+form div div{
+    border: 1px solid #1398F8;
+    font-size: 15px;
+    height: 55px;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.span-pass{
+    width: 18%;
+}
+.div-pass{
+    width: 18%;
+    margin-left: 5px;
+
+}
 form div span{
     border-top: 1px solid #1398F8;
     border-left: 1px solid #1398F8;
     border-bottom: 1px solid #1398F8;
     font-size: 16px;
     height: 55px;
-    width: 55px;
+    width: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: black;
     color: aliceblue;
 }
-form div div{
-    border: 1px solid #1398F8;
-    font-size: 15px;
-    height: 55px;
-    width: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-}
-
-#div-pass{
-    width: 18%;
-    margin-left: 5px;
-}
-
-#registr{
-    color: rgb(255, 255, 255)
-}
-
 .text{
     position: relative;
     right: 7%;
@@ -148,12 +152,4 @@ form div div{
     line-height: 27px;
     font-size: 18px;
 }
-
-
-
-
-
-
-
-
 

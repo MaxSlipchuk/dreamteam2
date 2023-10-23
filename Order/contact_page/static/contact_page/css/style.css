@@ -52,3 +52,77 @@
     line-height: 30px;
     letter-spacing: 2px;
 }
+
+.icon{
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon img{
+    width: 60%;
+}
+
+.icon a {
+	text-decoration: none;
+	color: #18272F;
+	font-weight: 700;
+  position: relative;
+}
+
+.icon #tel::before {
+  content: '';
+  background-color: #229ED9;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 0%;
+  height: 0px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.icon #tel:hover::before {
+  bottom: 15px;
+  height: 60%;
+  width: 30%;
+  border-radius: 100px;
+}
+
+.icon #inst::before {
+    content: '';
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    position: absolute;
+    left: 12px;
+    bottom: 20px;
+    width: 0%;
+    height: 0px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+  
+  .icon #inst:hover::before {
+    bottom: 18px;
+    height: 62%;
+    width: 40%;
+    border-radius: 10px;
+  }
+
+
+  .icon #git::before {
+    content: '';
+    background-color:  #1b1a1a;
+    position: absolute;
+    left: 15px;
+    bottom: 20px;
+    width: 0%;
+    height: 0px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+  
+  .icon #git:hover::before {
+    bottom: 16px;
+    height: 68%;
+    width: 40%;
+    border-radius: 100px;
+  }

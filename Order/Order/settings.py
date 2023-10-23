@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     'contact_page',
     'main_page',
     'product_page',
-    'shopping_cart_page'
-
+    'shopping_cart_page',
 ]
 
 MIDDLEWARE = [

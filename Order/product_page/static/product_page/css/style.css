@@ -23,26 +23,24 @@
 
 .container img{
     max-width: 370px;
-    /* box-shadow: 0px 10px 20px rgb(77, 75, 75) */
-    transition: transform 0.6s;
-
+    transition: all transform 0.6s;
 }
 
 .perfum p{
     width: 340px;
     align-items: center;
     text-align: center;
-    
-    
-    
 }
 .perfum:hover{
     transform: scale(0.95);
-    /* transition: 0.5s; */
-
 }
 
 .container img:hover{
     box-shadow: 0px 10px 20px rgb(77, 75, 75);
     transition: 0.6s;
+}
+
+img:not(:hover){
+    box-shadow: none;
+    transition-duration: 2s;
 }

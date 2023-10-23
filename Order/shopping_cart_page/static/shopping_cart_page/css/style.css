@@ -1,0 +1,89 @@
+.main-container{
+    display: flex;
+    border-bottom: 2px #1398F8 solid;
+    /* position: relative; */
+    left: 20%;
+    color: rgb(255, 255, 255);
+    width: 90%;
+    padding: 30px;
+    position: relative;
+    padding-left: 75px;
+    
+
+}
+
+div p{
+    display: flex;
+
+
+}
+.main-container div{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 30px;
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    display: flex;
+    /* position: relative; */
+    margin-left: 20%;
+    color: rgb(255, 255, 255);
+    width: 90%;
+    /* padding: 30px; */
+    position: relative;
+    padding-left: 75px;
+    
+    
+
+}
+.container-main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+.container div{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    right: 30px;
+    border: #1398F8 solid 1px;
+    width: 1%;
+    height: 120px;
+    align-items: center;
+
+}
+#img1{
+    width: 15%;
+    height: 85%;
+}
+#text1{
+    width: 75%;
+}
+#number{
+    width: 5%;
+}
+#product{
+    width: 45%;
+    /* padding: 45px; */
+}
+
+#count{
+    width: 10%;
+}
+
+#price{
+    width: 10%;
+}
+
+#sum{
+    width: 10%;
+}
+
+
+

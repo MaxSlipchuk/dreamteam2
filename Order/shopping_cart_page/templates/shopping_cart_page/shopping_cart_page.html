@@ -4,5 +4,83 @@
     <link rel="stylesheet" href="{% static 'shopping_cart_page/css/style.css' %}">
 {% endblock %}
 {% block content %}
-    <h1>ОБРАНІ ТОВАРИ</h1>
+<div class = "main-container">
+
+    <div id = "number"> 
+        <p>#</p>
+    </div>
+
+    <div id="product">
+        <p>товар </p>
+    </div>
+
+    <div id = "count">
+        <p>кількість </p>
+    </div>
+
+    <div id="price">
+        <p>ціна </p>
+    </div>
+
+    <div id = "sum">
+        <p>сума </p>
+    </div>
+</div>
+
+
+<div class="container-main">
+    <div class="container">
+        
+        <div id = "number"> 
+            <p>1</p>
+        </div>
+    
+        <div id="product">
+            <img id="img1"src="{% static 'shopping_cart_page/img/dune.jpg' %}" alt="">
+            <p id="text1">1234567</p>
+        </div>
+    
+        <div id = "count">
+            <p>2</p>
+        </div>
+    
+        <div id="price">
+            <p>100.00</p>
+        </div>
+    
+        <div id = "sum">
+            <p>200.00</p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        
+        <div id = "number"> 
+            <p>2</p>
+        </div>
+    
+        <div id="product">
+            <img id="img1"src="{% static 'shopping_cart_page/img/home.jpg' %}" alt="">
+            <p id="text1">2345678</p>
+        </div>
+    
+        <div id = "count">
+            <p>3</p>
+        </div>
+    
+        <div id="price">
+            <p>150.00</p>
+        </div>
+    
+        <div id = "sum">
+            <p>450.00</p>
+        </div>
+
+    </div>
+    
+</div>
+
+
+
 {% endblock %}

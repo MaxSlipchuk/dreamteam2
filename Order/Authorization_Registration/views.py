@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def registration(request):
     return render(request, "Authorization_Registration/Authorization_Registration.html")
+
+def login(request):
+    return render(request, "Authorization_Registration/login.html")
+    

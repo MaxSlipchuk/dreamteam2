@@ -1,0 +1,48 @@
+{% extends 'APP_Settings/base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'Authorization_Registration/css/login.css' %}">
+    <!-- <script src="{% static 'Authorization_Registration/js/script.js' %}"></script> -->
+{% endblock %}
+{% block content %}
+<div class="main-container">
+    <a id="registr" href="{% url 'Authorization_Registration' %}">РЕЄСТРАЦІЯ</a>
+    <a id="login" href="{% url 'login_page' %}">ВХІД</a>
+</div>
+<div class="container">
+<div class = 'input'>
+    <form action="#">
+        <div class="block-login">
+            <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
+            <input id="login"type="email" placeholder="Ваш логін" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+        </div>
+        <div class="block-pass">
+            <span class="span-pass"><img src="{% static 'Authorization_Registration/img/password-white.png' %}" alt=""></span>
+            <input id="password"type="password" placeholder="Ваш пароль">
+            <div class="div-pass"><input type="checkbox" id="checkbox"></div>
+        </div>
+        <input type="submit" value="Готово">
+
+    </form>
+</div>
+<div class = 'text'>
+    <h1>Стань частиною <span>історії</span></h1>
+    <p>Ми пропонуємо Вам стати частинкою ідеалогії DreamTeam!
+        Зареєстровані користувачі перші отримають інормацію стосовно нашої продукції.
+        Можливісь робити предзамовлення, отримувати персональні знижки та бути в курсі усіх новин компанії - 
+        усе це, та ще багато іншого ми пропонуємо нашим постійним користувачам!
+    </p>
+
+</div>
+</div>
+<script>
+    const password = document.getElementById("password");
+    const checkbox = document.getElementById("checkbox");
+
+    checkbox.onchange = function(e) {
+        password.type = checkbox.checked ? "text" : "password"
+    };
+</script>
+
+
+{% endblock %}

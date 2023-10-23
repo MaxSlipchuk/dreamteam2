@@ -26,11 +26,6 @@
 
 #reg{
     display: flex;
-    align-items: flex-end;
-    /* position: relative;
-    top: end;
- */
-
 }
 
 #header .a::before {
