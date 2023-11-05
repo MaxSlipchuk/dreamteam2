@@ -22,6 +22,9 @@ from product_page import views as product
 from shopping_cart_page import views as shopping
 from Authorization_Registration import views as registr
 from Authorization_Registration import views as loginn
+from Authorization_Registration.views import login 
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +33,6 @@ urlpatterns = [
     path('product_page/', product.product, name = 'product_page'),
     path('shopping_cart_page/', shopping.shopping, name = 'shopping_cart_page'),
     path('Authorization_Registration/', registr.registration, name='Authorization_Registration'),
-    path('Authorization_Registration/login.html', loginn.login, name = 'login_page')
-
+    path('Authorization_Registration/login.html', loginn.login, name = 'login_page'),
+    path('login/', login, name = 'login')
 ]

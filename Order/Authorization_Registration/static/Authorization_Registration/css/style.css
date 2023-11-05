@@ -50,7 +50,7 @@ form input{
     border-right: 1px solid #1398F8;
     border-left: none;
     -webkit-transition: 0.5s;
-    transition: 0.5s;
+    transition: all 0.5s;
     outline: none;
     padding-left: 2%;
 }
@@ -148,9 +148,12 @@ form div div{
     line-height: 27px;
     font-size: 18px;
 }
-
-
-
+.confirm{
+    cursor: zoom-out;
+}
+.error{
+    color: red;
+}
 
 
 

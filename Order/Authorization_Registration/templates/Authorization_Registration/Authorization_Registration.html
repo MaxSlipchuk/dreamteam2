@@ -10,29 +10,33 @@
     </div>
 <div class="container">
     <div class = 'input'>
-        <form action="#">
+        <form action="#" method="POST">
+            {% csrf_token %}
             <div class="block-name">
                 <span><img src="{% static 'Authorization_Registration/img/name-white.png' %}" alt=""></span>
-                <input id="name"type="text" placeholder="Ваше ім'я">
+                <input id="name"type="text" placeholder="Ваше ім'я" name="name" value="{{name}}">
             </div>
             <div class="block-surname">
                 <span><img src="{% static 'Authorization_Registration/img/surname-white.png' %}" alt=""></span>
-                <input id="surname"type="text" placeholder="Ваша фамілія">
-            </div>
+                <input id="surname"type="text" placeholder="Ваша фамілія" name = "surname" value="{{surname}}">
+  </div>
             <div class="block-numb">
                 <span><img src="{% static 'Authorization_Registration/img/tel-white.png' %}" alt=""></span>
-                <input id="telephone" type="tel" name="tel" pattern="\+38[0-9]{10}" placeholder="+38(___)___-__-__" maxlength="10">
+                <input id="telephone" type="tel" pattern="\+38[0-9]{10}" placeholder="+38(___)___-__-__" maxlength="10">
             </div>
             <div class="block-login">
                 <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
-                <input id="login"type="email" placeholder="Ваш логін" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+                <input id="login" type="text" placeholder="Ваш логін" name="login" value="{{login}}">
             </div>
             <div class="block-pass">
                 <span><img src="{% static 'Authorization_Registration/img/password-white.png' %}" alt=""></span>
-                <input id="password"type="password" placeholder="Ваш пароль">
+                <input id="password"type="password" placeholder="Ваш пароль" name = "password">
                 <div id="div-pass"><input type="checkbox" id="checkbox"></div>
             </div>
-            <input type="submit" value="Готово">
+            <input type="submit" value="Готово" class="confirm">
+            {% if error %}
+                <p class="error">{{error}}</p>
+            {% endif %}
 
         </form>
     </div>

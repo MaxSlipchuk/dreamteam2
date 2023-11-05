@@ -152,4 +152,6 @@ form div span{
     line-height: 27px;
     font-size: 18px;
 }
-
+.error{
+    color:red;
+}

@@ -11,18 +11,22 @@
 </div>
 <div class="container">
 <div class = 'input'>
-    <form action="#">
+    <form action="#" method="POST">
+        {% csrf_token %}
         <div class="block-login">
             <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
-            <input id="login"type="email" placeholder="Ваш логін" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+            <input id="login"type="text" placeholder="Ваш логін" name="username" value="{{login}}">
         </div>
         <div class="block-pass">
             <span class="span-pass"><img src="{% static 'Authorization_Registration/img/password-white.png' %}" alt=""></span>
-            <input id="password"type="password" placeholder="Ваш пароль">
+            <input id="password"type="password" placeholder="Ваш пароль" name="password" value="{{password}}">
             <div class="div-pass"><input type="checkbox" id="checkbox"></div>
         </div>
         <input type="submit" value="Готово">
-
+        {% if error %}
+            <p class="error">{{error}}</p>
+        {% endif %}
+        <!-- <button>login</button> -->
     </form>
 </div>
 <div class = 'text'>
@@ -46,3 +50,4 @@
 
 
 {% endblock %}
+<!-- pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" -->
