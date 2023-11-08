@@ -153,5 +153,9 @@ form div span{
     font-size: 18px;
 }
 .error{
-    color:red;
+    color: rgb(232, 85, 85);
+}
+
+.confirm{
+    cursor: pointer;
 }

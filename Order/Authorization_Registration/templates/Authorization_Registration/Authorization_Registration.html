@@ -19,10 +19,10 @@
             <div class="block-surname">
                 <span><img src="{% static 'Authorization_Registration/img/surname-white.png' %}" alt=""></span>
                 <input id="surname"type="text" placeholder="Ваша фамілія" name = "surname" value="{{surname}}">
-  </div>
+            </div>
             <div class="block-numb">
                 <span><img src="{% static 'Authorization_Registration/img/tel-white.png' %}" alt=""></span>
-                <input id="telephone" type="tel" pattern="\+38[0-9]{10}" placeholder="+38(___)___-__-__" maxlength="10">
+                <input id="telephone" type="tel" pattern="\+38[0-9]{10}" placeholder="+38(___)___-__-__" maxlength="13" name = 'telephone', value="{{telephone}}">
             </div>
             <div class="block-login">
                 <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>

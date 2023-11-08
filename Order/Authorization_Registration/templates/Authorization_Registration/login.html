@@ -2,7 +2,6 @@
 {% load static %}
 {% block links %}
     <link rel="stylesheet" href="{% static 'Authorization_Registration/css/login.css' %}">
-    <!-- <script src="{% static 'Authorization_Registration/js/script.js' %}"></script> -->
 {% endblock %}
 {% block content %}
 <div class="main-container">
@@ -10,34 +9,32 @@
     <a id="login" href="{% url 'login_page' %}">ВХІД</a>
 </div>
 <div class="container">
-<div class = 'input'>
-    <form action="#" method="POST">
-        {% csrf_token %}
-        <div class="block-login">
-            <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
-            <input id="login"type="text" placeholder="Ваш логін" name="username" value="{{login}}">
-        </div>
-        <div class="block-pass">
-            <span class="span-pass"><img src="{% static 'Authorization_Registration/img/password-white.png' %}" alt=""></span>
-            <input id="password"type="password" placeholder="Ваш пароль" name="password" value="{{password}}">
-            <div class="div-pass"><input type="checkbox" id="checkbox"></div>
-        </div>
-        <input type="submit" value="Готово">
-        {% if error %}
-            <p class="error">{{error}}</p>
-        {% endif %}
-        <!-- <button>login</button> -->
-    </form>
-</div>
-<div class = 'text'>
-    <h1>Стань частиною <span>історії</span></h1>
-    <p>Ми пропонуємо Вам стати частинкою ідеалогії DreamTeam!
-        Зареєстровані користувачі перші отримають інормацію стосовно нашої продукції.
-        Можливісь робити предзамовлення, отримувати персональні знижки та бути в курсі усіх новин компанії - 
-        усе це, та ще багато іншого ми пропонуємо нашим постійним користувачам!
-    </p>
-
-</div>
+    <div class = 'input'>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="block-login">
+                <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
+                <input id="login"type="text" placeholder="Ваш логін" name="username" value="{{login}}">
+            </div>
+            <div class="block-pass">
+                <span class="span-pass"><img src="{% static 'Authorization_Registration/img/password-white.png' %}" alt=""></span>
+                <input id="password"type="password" placeholder="Ваш пароль" name="password" value="{{password}}">
+                <div class="div-pass"><input type="checkbox" id="checkbox"></div>
+            </div>
+            <input class="confirm" type="submit" value="Готово">
+            {% if user %}
+                <p class="error">{{error}}</p>
+            {% endif %}
+        </form>
+    </div>
+    <div class = 'text'>
+        <h1>Стань частиною <span>історії</span></h1>
+        <p>Ми пропонуємо Вам стати частинкою ідеалогії DreamTeam!
+            Зареєстровані користувачі перші отримають інормацію стосовно нашої продукції.
+            Можливісь робити предзамовлення, отримувати персональні знижки та бути в курсі усіх новин компанії - 
+            усе це, та ще багато іншого ми пропонуємо нашим постійним користувачам!
+        </p>
+    </div>
 </div>
 <script>
     const password = document.getElementById("password");

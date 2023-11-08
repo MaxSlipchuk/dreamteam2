@@ -149,10 +149,10 @@ form div div{
     font-size: 18px;
 }
 .confirm{
-    cursor: zoom-out;
+    cursor: pointer;
 }
 .error{
-    color: red;
+    color: rgb(232, 85, 85);
 }
 
 
