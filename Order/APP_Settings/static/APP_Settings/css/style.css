@@ -16,7 +16,7 @@
     z-index: 999;
 }
 
-#header .a{
+#header .a, .acount{
     position: relative;
     text-decoration: none;
     text-align: left;
@@ -29,7 +29,8 @@
     display: flex;
 }
 
-#header .a::before {
+#header .a::before,
+#header .acount::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -42,7 +43,8 @@
     transition: transform .3s ease-in-out;
   }
 
-#header .a:hover::before {
+#header .a:hover::before,
+#header .acount:hover::before {
     transform-origin: left;
     transform: scaleX(1);
 }
@@ -54,10 +56,6 @@
     margin-top: 10px;
     align-items: center;
     border-top: #1398F8 solid 1px;
-}
-
-.user a{
-    display: flex;
 }
 
 #header img{

@@ -33,12 +33,21 @@
                 <input id="password"type="password" placeholder="Ваш пароль" name = "password">
                 <div id="div-pass"><input type="checkbox" id="checkbox"></div>
             </div>
-            <input type="submit" value="Готово" class="confirm">
-            {% if error %}
+            <!-- <input type="submit" value="Готово" class="confirm"> -->
+            <div class="center">
+                <button class="btn">
+                  <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                  </svg>
+                  <p>ГОТОВО</p>
+                </button>
+              </div>
+              {% if error %}
                 <p class="error">{{error}}</p>
-            {% endif %}
-
+                {% endif %}
         </form>
+        
     </div>
     <div class = 'text'>
         <h1>Стань частиною <span>історії</span></h1>

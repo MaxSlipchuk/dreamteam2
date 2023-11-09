@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.models import User
+from Authorization_Registration.models import Registration
 from django.contrib.auth import login, logout, authenticate
 from django.db.utils import IntegrityError
+from django.contrib.auth.hashers import check_password
 
 # Create your views here.
 
@@ -22,13 +23,14 @@ def registration(request):
         if login and name and surname and password and telephone:
             if len(password) >= 8:
                 try:
-                    User.objects.create_user(
-                        username=login, 
+                    user = Registration.objects.create(
+                        login=login, 
                         password=password,
-                        first_name=name, 
-                        last_name=surname,
-                        # telephone = telephone
+                        name=name, 
+                        surname=surname,
+                        phone_number = telephone
                     )
+                    user.save()
                     return redirect('login')
                 except IntegrityError:
                         context['error'] = 'Такий користувач вже існує'
@@ -41,20 +43,30 @@ def registration(request):
 
 def login_view(request): 
     context = {}
-    if request.user.is_authenticated:
-        context['error'] = 'Ти вже авторизувався'
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        if username and password:
-            user = authenticate(username=username, password=password)
-            if user:
-                login(request = request, user = user)
-                return redirect('main_page')
-            else:
-                context['error'] = 'Логін або пароль невірні'
+
+        # Отримати всіх користувачів з бази даних з вказаним логіном
+        users = Registration.objects.filter(login=username)
+        print(users)
+        if users.exists() and check_password(password, users[0].password):
+            try:
+            # Якщо користувач існує і пароль вірний
+                print()
+                print(f"/n Успішний вхід для користувача: {username}")
+                context['error'] = f'Успішний вхід для користувача: {username}'
+            except:
+                context['error'] = 'невдалося'
         else:
-            context['error'] = 'Заповніть всі поля'
+            # Якщо користувач не існує або пароль невірний
+            print("Невірний логін або пароль")
+            return redirect('main_page')
+                
+            # else:
+            #     context['error'] = 'Логін або пароль невірні'
+        # else:
+        #     context['error'] = 'Заповніть всі поля'
     return render(request, "Authorization_Registration/login.html", context)
     # return render(request, "login/", context)
 
