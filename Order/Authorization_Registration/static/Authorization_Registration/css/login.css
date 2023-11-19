@@ -4,7 +4,8 @@
     justify-content: space-evenly;
     margin-left: 20%;
     border-bottom: 1px #1398F8 solid;
-    padding: 30px;
+    height: 100px;
+    align-items: center;
 }
 
 .main-container a{

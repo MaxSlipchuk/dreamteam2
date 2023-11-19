@@ -13,7 +13,7 @@
         <form action="" method="POST">
             {% csrf_token %}
             <div class="block-login">
-                <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
+                <span><img src="{% static 'Authorization_Registration/img/login_white.png' %}" alt=""></span>
                 <input id="login"type="text" placeholder="Ваш логін" name="username" value="{{login}}">
             </div>
             <div class="block-pass">
@@ -31,6 +31,7 @@
                 </button>
               </div>
             {% if user %}
+                <p class="error">{{user.surname}}</p>
                 <p class="error">{{error}}</p>
             {% endif %}
         </form>

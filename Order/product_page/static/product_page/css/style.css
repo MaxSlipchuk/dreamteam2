@@ -11,6 +11,7 @@
 }
 
 .perfum{
+    position: relative;
     display: flex;
     flex-direction: column;
     color: white;
@@ -19,6 +20,8 @@
     box-shadow: 0px 10px 20px black;
     padding-bottom: 10px;
     transition: transform 0.6s;
+    border: 1px solid white;
+
 }
 
 .container img{
@@ -28,9 +31,10 @@
 
 .perfum p{
     width: 340px;
-    align-items: center;
     text-align: center;
+    margin-bottom: 50px;
 }
+
 .perfum:hover{
     transform: scale(0.95);
 }
@@ -44,3 +48,39 @@ img:not(:hover){
     box-shadow: none;
     transition-duration: 2s;
 }
+
+.btn-buy{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    color: rgb(246, 246, 246);
+    text-shadow: -2px 5px 7px black;
+    background: linear-gradient(45deg, black, white 65%);
+    border: 1px rgb(255, 255, 255) solid;
+    width: 40%;
+    height: 5%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.btn-buy img {
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding-right: 5px;
+  }
+
+.btn-buy p{
+    display: flex;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+  

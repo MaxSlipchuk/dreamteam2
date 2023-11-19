@@ -25,13 +25,22 @@
                 <input id="telephone" type="tel" pattern="\+38[0-9]{10}" placeholder="+38(___)___-__-__" maxlength="13" name = 'telephone', value="{{telephone}}">
             </div>
             <div class="block-login">
-                <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
+                <span><img src="{% static 'Authorization_Registration/img/login_white.png' %}" alt=""></span>
                 <input id="login" type="text" placeholder="Ваш логін" name="login" value="{{login}}">
+            </div>
+            <div class="block-email">
+                <span><img src="{% static 'Authorization_Registration/img/email-white.png' %}" alt=""></span>
+                <input id="email" type="text" placeholder="Ваша пошта" name="email" value="{{email}}">
             </div>
             <div class="block-pass">
                 <span><img src="{% static 'Authorization_Registration/img/password-white.png' %}" alt=""></span>
                 <input id="password"type="password" placeholder="Ваш пароль" name = "password">
                 <div id="div-pass"><input type="checkbox" id="checkbox"></div>
+            </div>
+            <div class="block-pass2">
+                <span><img src="{% static 'Authorization_Registration/img/confirm_white.png' %}" alt=""></span>
+                <input id="confirm_password"type="password" placeholder="Підтвердженя пароля" name = "confirm_password">
+                <div id="div-pass"><input type="checkbox" id="checkboxx"></div>
             </div>
             <!-- <input type="submit" value="Готово" class="confirm"> -->
             <div class="center">
@@ -43,7 +52,7 @@
                   <p>ГОТОВО</p>
                 </button>
               </div>
-              {% if error %}
+                {% if error %}
                 <p class="error">{{error}}</p>
                 {% endif %}
         </form>
@@ -65,6 +74,13 @@
 
     checkbox.onchange = function(e) {
         password.type = checkbox.checked ? "text" : "password"
+    };
+
+    const confirm_password = document.getElementById("confirm_password");
+    const checkboxx = document.getElementById("checkboxx");
+
+    checkboxx.onchange = function(k) {
+        confirm_password.type = checkboxx.checked ? "text" : "password"
     };
 </script>
     

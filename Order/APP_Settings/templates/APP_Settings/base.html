@@ -28,11 +28,11 @@
         {% if user.is_authenticated %}
             <div class="user">
                 <img src="{% static 'APP_Settings/img/name-white.png' %}" alt="">
-                <a class="acount" href="#">{{ user.username.upper }}</a>
+                <a class="account" href="#">{{ user.username.upper }}</a>
             </div>
             <div class="exit">
                 <img src="{% static 'APP_Settings/img/sign-out.png' %}" alt="">
-                <a class="acount" href="{% url 'logout' %}" name = 'logout'>ВИЙТИ</a>
+                <a class="account" href="{% url 'logout' %}" name = 'logout'>ВИЙТИ</a>
             </div>
         {% endif %} 
         </div>
