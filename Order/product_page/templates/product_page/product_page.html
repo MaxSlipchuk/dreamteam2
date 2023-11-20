@@ -3,97 +3,25 @@
 {% block links %}
     <link rel="stylesheet" href="{% static 'product_page/css/style.css' %}">
 {% endblock %}
+{% block script %}
+    <script defer src="{% static 'product_page/js/scriptvideo.js' %}"></script>
+{% endblock %}
 {% block content %}
     <div class="container">
-        <div class="perfum" id="perf-1">
-            <img src="{% static 'product_page/img/dune.jpg' %}" alt="">
-            <p id="text-1">Оригінальний і гармонійний Dune pour Homme черпає натхнення у прохолодних морських відпустках. 
-                Його композиція поєднує свіжі, деревні та океанічні ноти в ароматі, який є спокійним і гармонійним з природою. </p>
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                <button class="btn-buy">
-                    Купити
-                    <img src="{% static 'product_page\img\shopping-bag-black.gif' %}" alt="">
-                </button>
-                
-                
-            </form> 
-        </div>
-        <div class="perfum" id="perf-2">
-            <img src="{% static 'product_page/img/eau.jpg' %}" alt="">
-            <p>Більше свіжості, більше сили, більше глибини.
-                Eau Sauvage Extreme доносить оригінальний акорд до піку надлишку та збагачує його благородною деревною нотою, 
-                яка має обволікаючі акценти та сміливий сучасний характер, щоб посилити його мужність.
-                З таким же вічним шиком і такою самоочевидністю запаху, як туалетна вода Eau Sauvage. </p>
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                <button class="btn-buy">
-                    Купити
-                    <img src="{% static 'product_page\img\shopping-bag-black.gif' %}" alt="">
-                </button>
-            </form>
-        </div>
-        <div class="perfum" id="perf-3">
-            <img src="{% static 'product_page/img/fahrenheit.jpg' %}" alt="">
-            <p>Fahrenheit Parfum винаходить силу привабливості. 
-                Відразу викликає звикання, який підкреслює гармонію незвичайних нюхових акордів. 
-                Ароматний сценарій, який поєднує крайнощі, де квіти зустрічаються зі шкірою та деревом. 
-                Легендарний підпис аромату Fahrenheit оповитий яскравим, чуттєвим акордом з акцентами фіалки та шкіри, посиленими абсолютом бурбонської ванілі. 
-                Непереборна привабливість аромату, піднесеного рідкісними інгредієнтами. </p>
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                <button class="btn-buy">
-                    Купити
-                    <img src="{% static 'product_page\img\shopping-bag-black.gif' %}" alt="">
-                </button>
-            </form> 
-        </div>
-
+        {% for perfum in perfums %}
+            <div class="perfum">
+                <img src="{{perfum.image.url}}" alt="">
+                <p>{{perfum.description}}</p>
+                <form action="" method = 'POST'>
+                    {% csrf_token %}
+                    <button class="btn-buy">
+                        {{perfum.price}}.00 $
+                        <video class = "video" height=80% muted loop>
+                            <source src="{% static 'product_page\img\shopping_bag.mp4' %}" type="video/mp4"> 
+                        </video>
+                    </button>
+                </form> 
+            </div>
+        {% endfor %}
     </div>
-    <div class="container">
-        <div class="perfum" id="perf-4">
-            <img src="{% static 'product_page/img/higher.jpg' %}" alt="">
-            <p>Молодий, міський аромат, створений для чоловіка, який завжди відкритий до нових перспектив і горизонтів, 
-                складається навколо гармонії свіжих, деревних і пряних нот грейпфрута, перцю і ветівера. 
-                Яскравий і яскравий. </p>
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                <button class="btn-buy">
-                    Купити
-                    <img src="{% static 'product_page\img\shopping-bag-black.gif' %}" alt="">
-                </button>
-            </form> 
-        </div class="perfum">
-
-        <div class="perfum" id="perf-5">
-            <img src="{% static 'product_page/img/home.jpg' %}" alt="">
-            <p>Аромат чоловічого ірису. Сексуальний ольфакторний підпис, посилений мужніми деревними нотами для надзвичайно тонкої витонченості. 
-                Dior Homme носять так само, як ви носите елегантний гострий сучасний костюм. 
-                Залиште нюховий шлейф того деревного, пряного аромату, який одразу впізнає відмітний стиль. </p>
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                <button class="btn-buy">
-                    Купити
-                    <img src="{% static 'product_page\img\shopping-bag-black.gif' %}" alt="">
-                </button>
-            </form>
-        </div>
-        <div class="perfum" id="perf-6">
-            <img src="{% static 'product_page/img/jules.jpg' %}" alt="">
-            <p>Сильний чоловічий аромат, що складається з деревних зелених нот і пряних перцевих акцентів. </p>
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                <button class="btn-buy">
-                    Купити
-                    <img src="{% static 'product_page\img\shopping-bag-black.gif' %}" alt="">
-                </button>
-            </form> 
-        </div>
-
-    </div>
-    {% if name %}
-        <p class="error">{{name}}</p>
-        <p class="error">{{error}}</p>
-    {% endif %}
-
 {% endblock %}

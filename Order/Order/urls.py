@@ -23,6 +23,8 @@ from shopping_cart_page import views as shopping
 from Authorization_Registration import views as registr
 from Authorization_Registration import views as loginn
 from APP_Settings import views as appsettings
+from django.conf.urls.static import static
+from .settings import DEBUG, MEDIA_ROOT, MEDIA_URL
 
 
 urlpatterns = [
@@ -35,4 +37,8 @@ urlpatterns = [
     path('Authorization_Registration/login.html', loginn.login_view, name = 'login_page'),
     path('login/', loginn.login_view, name = 'login'),
     path('logout/', appsettings.user_logout, name ='logout'),
+    path('admin/', admin.site.urls)
 ]
+
+if DEBUG:
+    urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)

@@ -6,8 +6,9 @@
     padding-top: 30px;
     padding-left: 25px;
     gap: 20px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-bottom: 3%;
+    flex-wrap: wrap;
 }
 
 .perfum{
@@ -19,18 +20,19 @@
     align-items: center;
     box-shadow: 0px 10px 20px black;
     padding-bottom: 10px;
+    padding: 10px;
     transition: transform 0.6s;
     border: 1px solid white;
-
+    width: 30%;
 }
 
-.container img{
-    max-width: 370px;
+.perfum img{
     transition: all transform 0.6s;
+    width: 100%;
 }
 
 .perfum p{
-    width: 340px;
+    width: 100%;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -69,18 +71,9 @@ img:not(:hover){
     padding-left: 10px;
 }
 
-.btn-buy img {
-    height: 80%;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    padding-right: 5px;
-  }
-
 .btn-buy p{
     display: flex;
     color: black;
     font-size: 18px;
     padding-left: 10px;
 }
-
-  
