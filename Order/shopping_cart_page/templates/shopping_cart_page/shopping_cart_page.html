@@ -3,6 +3,9 @@
 {% block links %}
     <link rel="stylesheet" href="{% static 'shopping_cart_page/css/style.css' %}">
 {% endblock %}
+{% block script %}
+    <script defer src="{% static 'product_page/js/product.js' %}" ></script>
+{% endblock %}
 {% block content %}
 <div class = "main-container">
 
@@ -35,7 +38,7 @@
         </div>
         <div id="product">
             <img id="img1"src="{% static 'shopping_cart_page/img/dune.jpg' %}" alt="">
-            <p id="text1">1234567</p>
+            <p id="text1"></p>
         </div>
         <div id = "count">
             <p>2</p>

@@ -4,22 +4,25 @@
     <link rel="stylesheet" href="{% static 'product_page/css/style.css' %}">
 {% endblock %}
 {% block script %}
+    <script src="{% static 'product_page/js/product.js' %}" defer></script>
     <script defer src="{% static 'product_page/js/scriptvideo.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="container">
         {% for perfum in perfums %}
-            <div class="perfum">
+            <div class="perfum" id ="{{perfum.name}}">
                 <img src="{{perfum.image.url}}" alt="">
                 <p>{{perfum.description}}</p>
-                <form action="" method = 'POST'>
+                <form data-perfum-id="{{perfum.id}}" method='POST'>
                     {% csrf_token %}
-                    <button class="btn-buy">
+                    <input type="hidden" name="perfum_name" value="{{perfum.name}}">
+                    <input type="hidden" name="perfum_price" value="{{perfum.price}}">
+                    <button class="btn-buy" data-perfum-name="{{perfum.name}}" data-perfum-price="{{perfum.price}}">
                         {{perfum.price}}.00 $
                         <video class = "video" height=80% muted loop>
                             <source src="{% static 'product_page\img\shopping_bag.mp4' %}" type="video/mp4"> 
                         </video>
-                    </button>
+                    </button>      
                 </form> 
             </div>
         {% endfor %}

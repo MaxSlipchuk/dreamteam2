@@ -77,3 +77,8 @@ img:not(:hover){
     font-size: 18px;
     padding-left: 10px;
 }
+
+
+.active {
+    background-color: rgb(29, 212, 181);
+}
