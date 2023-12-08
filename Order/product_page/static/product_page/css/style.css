@@ -71,6 +71,27 @@ img:not(:hover){
     padding-left: 10px;
 }
 
+/* для кнопки яка переведе на сторінку авторизації */
+.btn-buy-log{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    color: rgb(246, 246, 246);
+    text-shadow: -2px 5px 7px black;
+    background: linear-gradient(45deg, black, white 65%);
+    border: 1px rgb(255, 255, 255) solid;
+    width: 40%;
+    height: 5%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
 .btn-buy p{
     display: flex;
     color: black;
@@ -81,4 +102,19 @@ img:not(:hover){
 
 .active {
     background-color: rgb(29, 212, 181);
+}
+
+.footer-product{
+    position: fixed;
+    bottom: 0%;
+    border-top: #1398F8 solid 2px;
+    height: 20px;
+    width: 100%;
+    margin-left: 310px;
+    background-color: black;
+    color: aliceblue;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 12px;
 }
