@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import login, logout, authenticate
 from django.db.utils import IntegrityError
 from Authorization_Registration.models import UserProfile
+from shopping_cart_page.models import ShoppingCart
 
 # Create your views here.
 
@@ -27,7 +28,7 @@ def registration(request):
         if login and name and surname and password and confirm_password and telephone and email:
             if len(password) >= 8:
                 if password == confirm_password:
-                    try:            
+                    try:   
                         UserProfile.create_user_profile(
                             username=login, 
                             password=password,

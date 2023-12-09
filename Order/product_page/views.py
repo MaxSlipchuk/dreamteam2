@@ -7,8 +7,4 @@ from product_page.models import Perfum
 def product(request):
     perfums = Perfum.objects.all()
 
-    # context = {
-    #     'perfums': perfums
-    # }
-
     return render(request, 'product_page/product_page.html', context={'perfums': perfums})

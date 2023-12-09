@@ -29,10 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("Назва парфуму: " + perfumeName);
                     console.log("Ціна парфуму: " + perfumePrice + " грн");
                     console.log("Кількість натискань: " + clickCount[perfumeName]);
-                    // const nameParf = document.querySelector('#text1')
-                    // nameParf.innerHTML = perfumeName
-
-                    // Додайте більше логічних операторів для інших деталей парфуму, якщо потрібно
                 } else {
                     console.error("Input елементи не знайдено");
                 }

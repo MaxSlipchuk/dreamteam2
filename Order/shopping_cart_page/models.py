@@ -1,10 +1,9 @@
 from django.db import models
-# from 
 
 # Create your models here.
 class ShoppingCart(models.Model):
     username = models.CharField(max_length=255)
-    perfum_name = models.CharField(max_length=255)
-    price = models.IntegerField()
-    perfum_count = models.IntegerField()
-    perfum_sum = models.IntegerField()
+    perfum_name = models.CharField(max_length=255, null=True, blank=True)
+    price = models.IntegerField(null=True, blank=True)
+    perfum_count = models.IntegerField(null=True, blank=True)
+    perfum_sum = models.IntegerField(null=True, blank=True)
