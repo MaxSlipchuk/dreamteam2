@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+import sqlite3
 from django.contrib.auth import login, logout, authenticate
 from django.db.utils import IntegrityError
 from Authorization_Registration.models import UserProfile
@@ -66,3 +67,12 @@ def login_view(request):
 
     return render(request, "Authorization_Registration/login.html", context)
 
+
+
+
+# con = sqlite3.connect("metanit.db")
+# cursor = con.cursor()
+ 
+# # получаем все данные из таблицы people
+# cursor.execute("SELECT id FROM auth_user")
+# print(cursor.fetchall())

@@ -19,11 +19,11 @@
 <body>
     <header>
         <div id ='header'>
-            <a class="a" href="{% url 'main_page' %}">ГОЛОВНА СТОРІНКА</a>
-            <a class="a" href="{% url 'product_page' %}">ПАРФУМИ</a>
-            <a class="a" href="{% url 'contact_page' %}">КОНТАКТНА ІНФОРМАЦІЯ</a>
-            <a class="a" href="{% url 'shopping_cart_page' %}">ОБРАНІ ТОВАРИ</a>
-            <a class="a" href="{% url 'Authorization_Registration' %}">РЕЄСТРАЦІЯ</a>
+            <a class="a" id = 'main-page-a' href="{% url 'main_page' %}">ГОЛОВНА СТОРІНКА</a>
+            <a class="a" id = 'perfum-a' href="{% url 'product_page' %}">ПАРФУМИ</a>
+            <a class="a" id = 'contacts-a' href="{% url 'contact_page' %}">КОНТАКТНА ІНФОРМАЦІЯ</a>
+            <a class="a" id = 'shopping-cart-page-a' href="{% url 'shopping_cart_page' %}">ОБРАНІ ТОВАРИ</a>
+            <a class="a" id = 'registr-a' href="{% url 'Authorization_Registration' %}">РЕЄСТРАЦІЯ</a>
 
         {% if user.is_authenticated %}
             <div class="user">
@@ -44,6 +44,6 @@
     <footer>
         {% block footer %}
         {% endblock %}
-    </footer>
+    </footer> 
 </body>
 </html>

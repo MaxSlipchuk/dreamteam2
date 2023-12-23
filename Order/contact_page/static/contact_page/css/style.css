@@ -1,39 +1,46 @@
+
 .container{
     display: flex;
     width: 100%;
-    margin-left: 20%;
-    height: 600px;
-    gap: 5px;
-    padding-top: 4%;
-    padding-left: 50px;
+    gap: 0.5%;
+    padding: 0.5% 0.5%;
 }
+
+/* зміна кольору ссилки, якщо ми на ній знаходимось */
+#header #contacts-a{
+  color: white;
+}
+
 .column1{
     overflow: hidden;
+    width: 35%;
 }
 
 .column2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     /* не дає елементам виходити за межі колонки */
-    overflow: hidden; 
+    width: 25%;
+    gap: 1%;
 }
 
 .column1 .image{
-    height: 600px;
-    width: auto;
+    width: 100%;
+    height: 100%;
     /* час трансформації обєкта. відповідає за плавність */
     transition: transform 0.8s;
 }
 
 .column2 .image{
-    height: 200px;
-    width: 300px;
-    max-width: 300px;
-    max-height: 200px;
+    height: 100%;
+    width: 100%;
     /* час трансформації обєкта. відповідає за плавність */
     transition: transform 0.8s;
+}
+
+.cont-img-a{
+  overflow: hidden;
 }
 
 .image:hover{
@@ -49,8 +56,13 @@
     color: aliceblue;
     gap: 20px;
     flex-direction: column;
-    line-height: 30px;
+    line-height: 170%;
     letter-spacing: 2px;
+    font-size: 1vw;
+}
+
+.column3 h2{
+  font-size: 1.2vw;
 }
 
 .icon{
@@ -59,22 +71,22 @@
 }
 
 .icon img{
-    width: 60%;
+    width: 100%;
 }
 
 .icon a {
 	text-decoration: none;
 	color: #18272F;
-	font-weight: 700;
   position: relative;
+  width: 20%;
 }
 
 .icon #tel::before {
   content: '';
   background-color: #229ED9;
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 27%;
+  bottom: 30%;
   width: 0%;
   height: 0px;
   z-index: -1;
@@ -84,16 +96,16 @@
 .icon #tel:hover::before {
   bottom: 15px;
   height: 60%;
-  width: 30%;
-  border-radius: 100px;
+  width: 60%;
+  border-radius: 100%;
 }
 
 .icon #inst::before {
     content: '';
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     position: absolute;
-    left: 12px;
-    bottom: 20px;
+    left: 22%;
+    bottom: 30%;
     width: 0%;
     height: 0px;
     z-index: -1;
@@ -102,8 +114,8 @@
   
   .icon #inst:hover::before {
     bottom: 18px;
-    height: 62%;
-    width: 40%;
+    height: 55%;
+    width: 55%;
     border-radius: 10px;
   }
 

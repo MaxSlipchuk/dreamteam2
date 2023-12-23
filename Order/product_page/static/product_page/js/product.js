@@ -1,6 +1,14 @@
  // Об'явлення об'єкта для збереження кількості натискань на кожному парфумі
  var clickCount = {};
 
+
+ var perfumeNameInputG = form.querySelector("[name='perfum_name']");
+ var perfumePriceInputG = form.querySelector("[name='perfum_price']");
+//  const newElement = document.createElement('div');
+//  newElement.innerHTML = '<h1 class="g"> perfumePriceInputG </h1>'
+
+//  perfumePriceInputG.prepend('')
+
 document.addEventListener("DOMContentLoaded", function () {
     // Додаємо слухача подій click до всіх елементів з класом "btn-buy"
     var buyButtons = document.querySelectorAll(".btn-buy");

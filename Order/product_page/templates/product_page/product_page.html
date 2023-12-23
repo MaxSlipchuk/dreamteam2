@@ -15,37 +15,16 @@
                 <p>{{perfum.description}}</p>
                 <form data-perfum-id="{{perfum.id}}" method='POST'>
                     {% csrf_token %}
-                    <input type="hidden" name="perfum_name" value="{{perfum.name}}">
-                    <input type="hidden" name="perfum_price" value="{{perfum.price}}">
-                    {% if user.is_authenticated %}
-                        <button class="btn-buy" data-perfum-name="{{perfum.name}}" data-perfum-price="{{perfum.price}}" >
-                            {{perfum.price}}.00 $
-                            <video class = "video" height=80% muted loop>
-                                <source src="{% static 'product_page\img\shopping_bag.mp4' %}" type="video/mp4"> 
-                            </video>
-                        </button>  
-                    {% else %}    
-                        <a href="{% url 'login' %}" name="login">
-                            <div class="btn-buy-log">
-                                {{perfum.price}}.00 $
-                            </div>
-                        </a>
-                        
-                            <!-- {{perfum.price}}.00 $
-                            <video class = "video" height=80% muted loop>
-                                <source src="{% static 'product_page\img\shopping_bag.mp4' %}" type="video/mp4"> 
-                            </video>
-                        </button>  -->
-                    {% endif %}
+                    <!-- <input type="hidden" name="perfum_name" value="{{perfum.name}}">
+                    <input type="hidden" name="perfum_price" value="{{perfum.price}}"> -->
+                    <button class="btn-buy" data-perfum-name="{{perfum.name}}" data-perfum-price="{{perfum.price}}" >
+                        {{perfum.price}}.00 $
+                        <video class = "video"  muted loop>
+                            <source src="{% static 'product_page\img\shopping_bag.mp4' %}" type="video/mp4"> 
+                        </video>
+                    </button>   
                 </form> 
             </div>
         {% endfor %}
     </div>
-{% endblock %}
-{% block footer %}
-    {% if user.is_authenticated == False %}
-        <div class="footer-product">
-            <p>*для можливості придбати парфуми, необхідно авторизуватись.</p>
-        </div>
-    {% endif %} 
 {% endblock %}

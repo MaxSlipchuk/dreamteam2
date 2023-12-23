@@ -3,7 +3,11 @@
 {% block links %}
     <link rel="stylesheet" href="{% static 'main_page/css/style.css' %}">
 {% endblock %}
+{% block script %}
+    <script defer src="{% static 'main_page/js/script.js' %}"></script>
+{% endblock %}
 {% block content %}
+<div class="content">
    <!-- Заголовок -->
     <div class="hello">
         <h1><span class="dream">Dream</span>Team</h1>
@@ -11,16 +15,16 @@
     </div>
     <!-- блок з відео та описом -->
     <div class="container">
-        <div id = "video">
-            <video id="vid-style" width="60%" autoplay muted loop>
-                <source src="{% static 'main_page/video/johny.mp4' %}" type="video/mp4" > 
-            </video>
-        </div>
+        <video id="vid-style" width="45%" autoplay muted loop>
+            <source src="{% static 'main_page/video/johny.mp4' %}" type="video/mp4" > 
+        </video>
         <!-- опис -->
         <div id = "text1">
             <p>Історія DreamTeam, всесвітньо відомого бренду якісних парфум, створюється уже понад 2 тижні. 
                 З моменту свого заснування в 2023 році продукція DreamTeam відзначається перевіреними результатами та пишається подихом дніпровського шарму.
                 Вже в перший рік свого заснування компанія презентувала на ринку перші парфуми, а на захват публіки не довелось довго очікувати. 
+            </p>
+            <p>
                 Сьогодні парфуми DreamTeam належать до найбільш продаваних у своїй категорії.
                 Бренд DreamTeam цінує своїх клієнтів і допомагає їм підвищити впевненість в собі. 
                 Спробуйте й ви парфуми DreamTeam — бути самим собою та почуватися просто чудово ще ніколи не було так просто.
@@ -28,12 +32,13 @@
         </div>
     </div>
     <!-- новий заголовок -->
-    <div class="new_title">
+    <div class="new-title">
         <h1>Дженна Ортега та інші зірки знялись в рекламі <span class="dream">Dream</span>Team</h1>
     </div>
     <div class="container2">
-        <!-- опис -->
-            <p class="text2">DreamTeam представили нову кампанію аромату DreamDior. 
+        <div class="container2-1">
+            <p class="text2">
+                DreamTeam представили нову кампанію аромату DreamDior. 
                 Парфум-унісекс рекламують Дженна Ортега, Майя Хоук, Джозеф Квінн та інші молоді зірки. 
                 Аромат DreamDior втілює один із найулюбленіших кольорів компанії — сірий. 
                 Це парфум-унісекс з квітковими та деревними нотами і шипровим шлейфом. 
@@ -42,27 +47,32 @@
             <p class="text2">
                 Крім Дженни Ортеги, до кампанії DreamDior долучилися актор Джозеф Квінн із “Дивних див“, 
                 акторка Тусо Мбеду, двічі номінована на “Еммі” зірка фільму “Королева-воїн”, 
-                репер Орельсан. Також заявлена акторка Мая Гоук, дочка Ітана Гоука та Уми Турман, 
+                репер Орельсан. 
+                Також заявлена акторка Мая Гоук, дочка Ітана Гоука та Уми Турман, 
                 яку ми вже влітку побачимо в новому фільмі Веса Андерсона “Місто Астероїдів“.
             </p>
+        </div>
+        <div class="container2-2">
             <div class="flip-card" tabIndex="0">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img id="image" src="{% static 'main_page/img/ortega.jpg' %}" alt="">
+                    <img id="image-Ortega" src="{% static 'main_page/img/ortega.jpg' %}" alt="">
                   </div>
                   <div class="flip-card-back">
                     <h1>НАСМІЛІТЬСЯ РИЗИКНУТИ</h1>
-                    <h2>Для DreamTeam Дженна Ортега йде на ризик і втілює запрошення бути тим, ким ви хочете, претендувати на те, що ви хочете. 
+                    <p>Для DreamTeam Дженна Ортега йде на ризик і втілює запрошення бути тим, ким ви хочете, претендувати на те, що ви хочете. 
                         Перед камерою вона правдива й неповторна, відчутна в образах із різким стилем. 
-                        Яскравий, DreamDior вітає її рішучий вигляд і хореографічні жести.</h2>
+                        Яскравий, DreamDior вітає її рішучий вигляд і хореографічні жести.</p>
                   </div>
                 </div>
             </div>
+        </div>
     </div>
+</div>
 {% endblock %}
 {% block footer %}
-    <div class="footer">
-        <a id="foot" href="{% url 'main_page' %}"><span class="dream">Dream</span>Team</a>
-    </div>>
+<div class="footer">
+    <a href="{% url 'main_page' %}"><span class="dream">Dream</span>Team</a>
+</div>
 {% endblock %}
 

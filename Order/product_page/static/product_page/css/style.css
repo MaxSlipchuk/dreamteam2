@@ -1,29 +1,33 @@
 
 .container{
     display: flex;
-    flex-direction: row;
-    margin-left: 20%;
-    padding-top: 30px;
-    padding-left: 25px;
-    gap: 20px;
-    justify-content: flex-start;
-    margin-bottom: 3%;
     flex-wrap: wrap;
+    gap: 1%;
 }
+
+/* зміна кольору ссилки, якщо ми на ній знаходимось */
+#header #perfum-a{
+    color: white;
+  }
 
 .perfum{
     position: relative;
+    left: 1%;
+    margin-top: 1%;
     display: flex;
     flex-direction: column;
     color: white;
     gap:20px;
     align-items: center;
+    justify-content: space-between;
     box-shadow: 0px 10px 20px black;
-    padding-bottom: 10px;
-    padding: 10px;
     transition: transform 0.6s;
     border: 1px solid white;
-    width: 30%;
+    width: 32%;
+}
+
+.perfum .video{
+    height: 40px;
 }
 
 .perfum img{
@@ -34,11 +38,18 @@
 .perfum p{
     width: 100%;
     text-align: center;
-    margin-bottom: 50px;
+    font-size: 0.9vw;
+    padding: 0 3%;
 }
+
 
 .perfum:hover{
     transform: scale(0.95);
+}
+
+.perfum form{
+    width: 40%;
+    margin-bottom: 3%;
 }
 
 .container img:hover{
@@ -52,22 +63,16 @@ img:not(:hover){
 }
 
 .btn-buy{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 20px;
     color: rgb(246, 246, 246);
     text-shadow: -2px 5px 7px black;
     background: linear-gradient(45deg, black, white 65%);
     border: 1px rgb(255, 255, 255) solid;
-    width: 40%;
-    height: 5%;
+    width: 100%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 1vw;
     padding-left: 10px;
 }
 
@@ -91,20 +96,16 @@ img:not(:hover){
     font-size: 16px;
     padding-left: 10px;
 }
-
+/* 
 .btn-buy p{
     display: flex;
     color: black;
     font-size: 18px;
     padding-left: 10px;
-}
+} */
 
 
-.active {
-    background-color: rgb(29, 212, 181);
-}
-
-.footer-product{
+/* .footer-product{
     position: fixed;
     bottom: 0%;
     border-top: #1398F8 solid 2px;
@@ -117,4 +118,4 @@ img:not(:hover){
     padding-top: 10px;
     padding-left: 10px;
     font-size: 12px;
-}
+} */
