@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'APP_Settings/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{% static 'APP_Settings/css/media.css' %}" media="screen and {max-width: 767px}">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
     {% block links %}
@@ -19,20 +20,31 @@
 <body>
     <header>
         <div id ='header'>
-            <a class="a" id = 'main-page-a' href="{% url 'main_page' %}">ГОЛОВНА СТОРІНКА</a>
-            <a class="a" id = 'perfum-a' href="{% url 'product_page' %}">ПАРФУМИ</a>
-            <a class="a" id = 'contacts-a' href="{% url 'contact_page' %}">КОНТАКТНА ІНФОРМАЦІЯ</a>
-            <a class="a" id = 'shopping-cart-page-a' href="{% url 'shopping_cart_page' %}">ОБРАНІ ТОВАРИ</a>
-            <a class="a" id = 'registr-a' href="{% url 'Authorization_Registration' %}">РЕЄСТРАЦІЯ</a>
-
+            <a class="a" id = 'main-page-a' href="{% url 'main_page' %}"><p>ГОЛОВНА СТОРІНКА</p>
+                <img src="{% static 'APP_Settings/img/home.png' %}" alt="">
+            </a>
+            <a class="a" id = 'perfum-a' href="{% url 'product_page' %}"><p>ПАРФУМИ</p>
+                <img src="{% static 'APP_Settings/img/perfum.png' %}" alt="">
+            </a>
+            <a class="a" id = 'contacts-a' href="{% url 'contact_page' %}"><p>КОНТАКТНА ІНФОРМАЦІЯ</p>
+                <img id="image_1" src="{% static 'APP_Settings/img/tel-white.png' %}" alt="">
+            </a>
+            <a class="a" id = 'shopping-cart-page-a' href="{% url 'shopping_cart_page' %}"><p>ОБРАНІ ТОВАРИ</p>
+                <img src="{% static 'APP_Settings/img/shopping-bag.png' %}" alt="">
+            </a>
+            <a class="a" id = 'registr-a' href="{% url 'Authorization_Registration' %}"><p>РЕЄСТРАЦІЯ</p>
+                <img id="image_1" src="{% static 'APP_Settings/img/name-white.png' %}" alt="">
+            </a>
         {% if user.is_authenticated %}
-            <div class="user">
-                <img src="{% static 'APP_Settings/img/name-white.png' %}" alt="">
-                <a class="account" href="#">{{ user.username.upper }}</a>
-            </div>
-            <div class="exit">
-                <img src="{% static 'APP_Settings/img/sign-out.png' %}" alt="">
-                <a class="account" href="{% url 'logout' %}" name = 'logout'>ВИЙТИ</a>
+            <div class = "user_exit">
+                <div class="user">
+                    <img src="{% static 'APP_Settings/img/name-white.png' %}" alt="">
+                    <a class="account" href="#">{{ user.username.upper }}</a>
+                </div>
+                <div class="exit">
+                    <img id="exit-img1" src="{% static 'APP_Settings/img/sign-out.png' %}" alt="">
+                    <a class="account" href="{% url 'logout' %}" name = 'logout'><p>ВИЙТИ</p></a>  
+                </div>
             </div>
         {% endif %} 
         </div>

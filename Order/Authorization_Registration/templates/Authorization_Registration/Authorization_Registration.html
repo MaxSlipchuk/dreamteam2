@@ -43,15 +43,11 @@
                 <div id="div-pass"><input type="checkbox" id="checkboxx"></div>
             </div>
             <!-- <input type="submit" value="Готово" class="confirm"> -->
-            <div class="center">
+            <!-- <div class="center"> -->
                 <button class="btn">
-                  <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-                  </svg>
                   <p>ГОТОВО</p>
                 </button>
-              </div>
+              <!-- </div> -->
                 {% if error %}
                 <p class="error">{{error}}</p>
                 {% endif %}
@@ -59,7 +55,7 @@
         
     </div>
     <div class = 'text'>
-        <h1>Стань частиною <span>історії</span></h1>
+        <h1>Стань частиною <br> <span>історії</span></h1>
         <p>Ми пропонуємо Вам стати частинкою ідеалогії DreamTeam!
             Зареєстровані користувачі перші отримають інормацію стосовно нашої продукції.
             Можливісь робити предзамовлення, отримувати персональні знижки та бути в курсі усіх новин компанії - 
@@ -83,5 +79,6 @@
         confirm_password.type = checkboxx.checked ? "text" : "password"
     };
 </script>
+
     
 {% endblock %}

@@ -27,7 +27,7 @@
 }
 
 .perfum .video{
-    height: 40px;
+    height: 2vw;
 }
 
 .perfum img{
@@ -73,11 +73,11 @@ img:not(:hover){
     align-items: center;
     justify-content: space-between;
     font-size: 1vw;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 
 /* для кнопки яка переведе на сторінку авторизації */
-.btn-buy-log{
+/* .btn-buy-log{
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -95,7 +95,7 @@ img:not(:hover){
     justify-content: space-between;
     font-size: 16px;
     padding-left: 10px;
-}
+} */
 /* 
 .btn-buy p{
     display: flex;
@@ -119,3 +119,29 @@ img:not(:hover){
     padding-left: 10px;
     font-size: 12px;
 } */
+
+
+@media (max-width: 767px){
+    .container{
+        justify-content: space-between;
+        margin-bottom: 23%;
+    }
+    .perfum{
+        width: 49.5%;
+        left: 0;
+    }
+    .perfum p{
+        font-size: 2.7vw;
+    }
+    .perfum .video{
+        display: none;
+    }
+
+    .perfum form{
+        width: 60%;
+        height: 6vw;
+    }
+    .perfum .btn-buy{
+        height: 100%;
+    }
+}

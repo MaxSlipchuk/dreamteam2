@@ -202,3 +202,11 @@ a{
 .footer a:hover {
     font-size: 22px;
 }
+
+
+@media (max-width: 767px){
+    .footer{
+        display: none;
+    }
+    
+}
