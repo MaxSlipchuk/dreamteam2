@@ -6,6 +6,12 @@ class Perfum(models.Model):
     price = models.IntegerField(verbose_name='Ціна')
     image = models.ImageField(verbose_name="Зображення", blank=True, null=True)
     description = models.CharField(max_length = 1000, verbose_name="Опис", blank=True, null=True)
+    # для нумерації в корзині
+    number_in_cart = models.IntegerField(blank = True, null = True)
+    # кількість обраного товару
+    count_in_cart = models.IntegerField(blank = True, null = True)
+    # сума в корзині
+    sum_in_cart = models.IntegerField(blank = True, null = True)
     
     
     class Meta:

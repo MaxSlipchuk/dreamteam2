@@ -4,20 +4,20 @@
     <link rel="stylesheet" href="{% static 'shopping_cart_page/css/style.css' %}">
 {% endblock %}
 {% block script %}
-    <script defer src="{% static 'product_page/js/product.js' %}" ></script>
+    <script defer src="{% static 'shopping_cart_page/js/script.js' %}" ></script>
 {% endblock %}
 {% block content %}
 <div class = "main-container">
 
     <div id = "number"> 
-        <p>#</p>
+        <p>#id</p>
     </div>
 
     <div id="product">
         <p>товар </p>
     </div>
 
-    <div id = "count">
+    <div id = "count-block">
         <p>кількість </p>
     </div>
 
@@ -28,48 +28,51 @@
     <div id = "sum">
         <p>сума </p>
     </div>
+
 </div>
 
+<div class="container-field">
+    {% for perfume in all_perfumes %}
+        <div class="perfume-info">
+            <div id = "number"> 
+                <p>{{perfume.number_in_cart}}</p>
+            </div>
 
-<div class="container-main">
-    <div class="container">
-        <div id = "number"> 
-            <p>1</p>
+            <div id="product">
+                <p>{{perfume.name}}</p>
+            </div>
+
+            <div id="count-block">
+                <!-- <span id ='minus'>-</span> -->
+                <p>{{perfume.count_in_cart}}</p>
+                <!-- <span id ='plus'>+</span> -->
+            </div>
+
+            <div id="price">
+                <p>{{perfume.price}}</p>
+            </div>
+
+            <div id = "sum">
+                <p>{{perfume.sum_in_cart}}</p>
+            </div>
+
+            <div  id ='del'>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="perfume_id" value="{{perfume.id}}">
+                    <button>x</button>
+                </form>
+            </div>
+
         </div>
-        <div id="product">
-            <img id="img1"src="{% static 'shopping_cart_page/img/dune.jpg' %}" alt="">
-            <p id="text1"></p>
-        </div>
-        <div id = "count">
-            <p>2</p>
-        </div>
-        <div id="price">
-            <p>100.00</p>
-        </div>
-        <div id = "sum">
-            <p>200.00</p>
-        </div>
-    </div>
-    <div class="container">
-        <div id = "number"> 
-            <p>2</p>
-        </div>
-        <div id="product">
-            <img id="img1"src="{% static 'shopping_cart_page/img/home.jpg' %}" alt="">
-            <p id="text1">2345678</p>
-        </div>
-        <div id = "count">
-            <p>3</p>
-        </div>
-        <div id="price">
-            <p>150.00</p>
-        </div>
-        <div id = "sum">
-            <p>450.00</p>
-        </div>
-    </div>
+    {% endfor %}
 </div>
-
-
-
+<div class = 'finish'>
+    <form action="" method="POST" name="finish">
+        {% csrf_token %}
+        <button name = 'clear'>Очистити корзину</button>
+        <button>Наступний крок</button>
+    </form>
+    
+</div>
 {% endblock %}

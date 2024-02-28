@@ -11,39 +11,17 @@ def product(request):
 
     context = {}
     context['perfums'] = perfums
-    name = request.POST.get('perfum_name')
-    price = request.POST.get('perfum_price')
+ 
+    response = render(request, 'product_page/product_page.html', context)
 
-    # print("Парфум:", name)
-    # print("Ціна:", price)
+    if request.method == "POST":
+        perfume_id = request.POST.get('perfume_id')
+        cart = request.COOKIES.get('cart')
+        if not cart:
+            cart = perfume_id
+        else:
+            cart += " " + perfume_id
 
-    # if request.user.is_authenticated:
-    #     user = request.user.username
-
-        
-    #     user_f = ShoppingCart.objects.get(username=user)
-    #     user_f.perfum_name = name
-    #     user_f.price = price
-    #     user_f.save()
-        # ShoppingCart.objects.all()
-        # print(username)
-        # print(user_f)
-        # print()
-
-
-        # user_f.perfum_name = name
-        # user_f.price = price
+        response.set_cookie("cart", cart)
     
-
-
-        # login = request.POST.get("login")
-        # name = request.POST.get("name")
-        # surname = request.POST.get("surname")
-        # password = request.POST.get("password")
-        # telephone = request.POST.get('telephone')
-        # email = request.POST.get('email')
-        # confirm_password = request.POST.get("confirm_password")
-        # context["login"] = login
-        # context["name"] = name
-    
-    return render(request, 'product_page/product_page.html', context)
+    return response

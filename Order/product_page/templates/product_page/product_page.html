@@ -15,8 +15,8 @@
                 <p>{{perfum.description}}</p>
                 <form data-perfum-id="{{perfum.id}}" method='POST'>
                     {% csrf_token %}
-                    <!-- <input type="hidden" name="perfum_name" value="{{perfum.name}}">
-                    <input type="hidden" name="perfum_price" value="{{perfum.price}}"> -->
+                    <!-- <input type="hidden" name="perfum_name" value="{{perfum.name}}"> -->
+                    <input type="hidden" name="perfume_id" value="{{perfum.id}}">
                     <button class="btn-buy" data-perfum-name="{{perfum.name}}" data-perfum-price="{{perfum.price}}" >
                         <p>{{perfum.price}}.00 $</p>
                         <video class = "video"  muted loop>

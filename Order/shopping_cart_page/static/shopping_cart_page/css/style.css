@@ -1,94 +1,132 @@
-.main-container{
-    display: flex;
-    position: relative;
-    margin-top: 1%;
-    /* margin-left: 1%; */
+.main-container {
+    display: grid;
+    grid-template-columns: 10% 60% repeat(4, 10%);
     border-bottom: 2px #1398F8 solid;
-    /* left: 20%; */
     color: rgb(255, 255, 255);
+    background-color: black;
     width: 100%;
-    height: 40px;
-    position: relative;
-    padding-left: 75px;
+    height: 6vw;
 }
 
+
+.container-field{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid white; */
+    /* position: absolute; */
+    /* left: 50%; */
+    margin-top: 4%;
+    transform: translate(1%, 0);
+    overflow: auto; /* or overflow: scroll; */
+    max-height: 65vh; /* optional: set a maximum height for the container */
+    min-height: 65vh;
+    gap: 10px;
+    padding-right: 1%;
+    padding-bottom: 1px;
+}
+
+/* Обгортка для полоси прокрутки */
+.container-field::-webkit-scrollbar {
+    width: 7px; /* ширина */
+}
+
+/* Колір тла для полоси прокрутки */
+.container-field::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* Колір полоски прокрутки */
+.container-field::-webkit-scrollbar-thumb {
+    background: #373737; 
+    border-radius: 15px;
+}
+
+/* Колір при наведенні на полоску прокрутки */
+.container-field::-webkit-scrollbar-thumb:hover {
+    background: #045996; 
+}
+
+.perfume-info{
+    display: grid;
+    grid-template-columns: 10% 50% repeat(3, 10%);
+    border: 1px #1398F8 solid;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    grid-auto-rows: 4vw; /* Задаємо висоту рядка */
+}
+
+
+#number, #product, #count-block, #price, #sum, #del {
+    border: 1px solid #000; /* Додавання меж для демонстрації розташування елементів */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#number {
+    grid-column: 1;
+}
+
+#product {
+    grid-column: 2;
+}
+
+#count-block {
+    grid-column: 3;
+}
+
+#price {
+    grid-column: 4;
+}
+
+#sum {
+    grid-column: 5;
+}
+
+#del {
+    grid-column: 6;
+}
 
 /* зміна кольору ссилки, якщо ми на ній знаходимось */
 #header #shopping-cart-page-a{
     color: white;
   }
 
-div p{
-    display: flex;
+
+.count-block, span{
+    border: #1398F8 1px solid;
+    background-color: #373737;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+    
 }
 
-.main-container div{
+#count-block {
     display: flex;
-    justify-content: center;
-    position: relative;
-    right: 30px;
-    font-size: 20px;
-}
-.container{
-    display: flex;
-    position: relative;
-    width: 100%;
-    margin-top: 1%;
-    margin-left: 1%;
-    /* gap: 4px; */
-    
     align-items: center;
-    color: rgb(255, 255, 255);
-    padding-left: 75px;
-    
-    
+}
 
-}
-.container-main{
+.finish{
+    width: calc(98% - 7px - 1%);
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-}
-.container div{
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
-    right: 30px;
-    border: #1398F8 solid 1px;
-    width: 1%;
-    height: 120px;
+    justify-content: flex-end;
+    gap: 20px;
     align-items: center;
-
-}
-#img1{
-    width: 15%;
-    height: 85%;
-}
-#text1{
-    width: 75%;
-}
-#number{
-    width: 5%;
-}
-#product{
-    width: 45%;
-    /* padding: 45px; */
+    background-color: #000;
+    border: #1398F8 1px solid;
+    height: 4vw;
+    margin-top: 2%;
+    padding-right: 2%;
+    /* padding-right: 7px; */
+    /* position: relative; */
+    /* left: 20%; */
+    /* bottom: 0; */
+    
+    transform: translate(1%, 0);
 }
 
-#count{
-    width: 10%;
-}
-
-#price{
-    width: 10%;
-}
-
-#sum{
-    width: 10%;
-}
 
 
 
